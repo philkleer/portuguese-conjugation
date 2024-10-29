@@ -108,7 +108,7 @@ struct trainView: View {
     /// ```
     @State var lastTenses: [String] = []
     
-    /// value to count for position in ``lastTenses` (`Int`)
+    /// value to count for position in ``lastTenses`` (`Int`)
     ///
     /// ```swift
     /// @State var countTense: Int = 0
@@ -388,7 +388,7 @@ struct trainView: View {
     /// This function randomly selects the modus for the conjugation (singular or plural) and returns a `String` for the selection (`singular` or `plural`).
     /// - Returns: a `String` that indicates the modus (singular or plural)
     func setNumerus() -> (String) {
-        var numerusArray = ["singular", "plural"]
+        let numerusArray = ["singular", "plural"]
         
         let hilfeAnzahl = numerusArray.randomElement()!
         

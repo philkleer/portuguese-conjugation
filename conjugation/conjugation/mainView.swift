@@ -41,7 +41,7 @@ struct mainView: View {
                         .customNavigationBackButtonHidden(true)
                         .customNavigationResetHidden(true)
                         .customNavigationOptionsHidden(true)
-                    Image(systemName: "chevron.forward.circle")
+                    Image(systemName: "gear")
                         .scaleEffect(2.0)
                         .foregroundColor(Color("style"))
                 }.padding(.top, 40)

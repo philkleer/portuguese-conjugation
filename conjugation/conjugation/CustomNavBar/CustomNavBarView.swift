@@ -50,7 +50,11 @@ struct CustomNavBarView: View {
                 
                 Spacer()
                 
+                Spacer()
+                
                 titleSec
+                
+                Spacer()
                 
                 Spacer()
                 
