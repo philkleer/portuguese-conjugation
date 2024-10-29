@@ -7,15 +7,15 @@ If you like this app, you can [buy me a coffee](https://buymeacoffee.com/bpkleer
 ## Example
 Here you can see an example (Version: 2.0)
 
-![](examples/example1.png)
+![](examples/example1.png | width=100)
 
-![](examples/example2.png)
+![](examples/example2.png | width=100)
 
-![](examples/example3.png)
+![](examples/example3.png | width=100)
 
-![](examples/example4.png)
+![](examples/example4.png | width=100)
 
-![](examples/example5.png)
+![](examples/example5.png | width=100)
 
 ![](examples/example.mp4)
 
