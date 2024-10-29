@@ -17,7 +17,7 @@ Here you can see an example (Version: 2.0)
 
 ![](examples/example5.png | width=100)
 
-![](examples/example.mp4)
+![](examples/example.gif | width=100)
 
 ## Available conjugations
 ### Indicativo
