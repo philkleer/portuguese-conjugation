@@ -25,6 +25,7 @@ struct mainView: View {
     ///  ```swift
     /// @State var userSettings = UserSettings()
     ///  ```
+    
     @State var userSettings = UserSettings()
     
     var body: some View {
