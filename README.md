@@ -7,17 +7,17 @@ If you like this app, you can [buy me a coffee](https://buymeacoffee.com/bpkleer
 ## Example
 Here you can see an example (Version: 2.0)
 
-![](examples/example1.png | width=100)
+<img src="examples/example1.png" alt="example1" width="100">
+ 
+<img src="examples/example2.png" alt="example1" width="100">
 
-![](examples/example2.png | width=100)
+<img src="examples/example3.png" alt="example1" width="100">
 
-![](examples/example3.png | width=100)
+<img src="examples/example4.png" alt="example1" width="100">
 
-![](examples/example4.png | width=100)
+<img src="examples/example5.png" alt="example1" width="100">
 
-![](examples/example5.png | width=100)
-
-![](examples/example.gif | width=100)
+<img src="examples/example.gif" alt="example-gif" width="100">
 
 ## Available conjugations
 ### Indicativo
