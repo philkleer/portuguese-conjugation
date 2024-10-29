@@ -5,9 +5,19 @@ This is an application for iOS to learn basic portuguese conjugation (brazilian 
 If you like this app, you can [buy me a coffee](https://buymeacoffee.com/bpkleerw).
 
 ## Example
-Here you can see an example (Version: 11.4)
+Here you can see an example (Version: 2.0)
 
-![](example.mp4)
+![](examples/example1.png)
+
+![](examples/example2.png)
+
+![](examples/example3.png)
+
+![](examples/example4.png)
+
+![](examples/example5.png)
+
+![](examples/example.mp4)
 
 ## Available conjugations
 ### Indicativo
