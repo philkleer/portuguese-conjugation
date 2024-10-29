@@ -11,7 +11,8 @@ Here you can see examples (Version: 2.0) of the screens:
 
 <img src="examples/example4.png" alt="example1" width="200">  <img src="examples/example5.png" alt="example1" width="200"> 
 
-<img src="examples/example.gif" alt="example-gif" width="100">
+### Animated view tour
+<img src="examples/example.gif" alt="example-gif" width="200">
 
 ## Available conjugations
 ### Indicativo

@@ -32,7 +32,7 @@ struct optionsView: View {
         VStack {
             ScrollView(.vertical) {
                 Text("Qual pessoas?")
-                    .foregroundColor(Color("style"))
+                    .foregroundColor(Color("textcolor"))
                     .padding(.top, 10)
                 
                 Toggle(isOn: $userSettings.isTu, label: {
@@ -41,12 +41,12 @@ struct optionsView: View {
                 })
                 .padding(.horizontal, 15.0)
                 .tint(Color("style"))
-                .foregroundColor(Color("style"))
+                .foregroundColor(Color("textcolor"))
                 
                 
                 VStack (spacing: 7.5) {
                     Text("Verbos")
-                        .foregroundColor(Color("style"))
+                        .foregroundColor(Color("textcolor"))
                     
                     if #available(iOS 17.0, *) {
                         Toggle(isOn: $userSettings.regulares, label: {
@@ -55,7 +55,7 @@ struct optionsView: View {
                         })
                         .padding(.horizontal, 15.0)
                         .tint(Color("style"))
-                        .foregroundColor(Color("style"))
+                        .foregroundColor(Color("textcolor"))
                         .onChange(of: [self.userSettings.regulares, self.userSettings.irregulares]) { oldvalue, newvalue in atLeastOneVerbGroup()}
                     } else {
                         Toggle(isOn: $userSettings.regulares, label: {
@@ -64,7 +64,7 @@ struct optionsView: View {
                         })
                         .padding(.horizontal, 15.0)
                         .tint(Color("style"))
-                        .foregroundColor(Color("style"))
+                        .foregroundColor(Color("textcolor"))
                         .onChange(of: self.userSettings.regulares) { value in
                             atLeastOneVerbGroup()
                         }
@@ -80,13 +80,13 @@ struct optionsView: View {
                     .padding(.horizontal, 15.0)
                     .padding([.bottom], 20)
                     .tint(Color("style"))
-                    .foregroundColor(Color("style"))
+                    .foregroundColor(Color("textcolor"))
                 }
                 
                 
                 VStack (spacing: 7.5) {
                     Text("Conjugações")
-                        .foregroundColor(Color("style"))
+                        .foregroundColor(Color("textcolor"))
                     if #available(iOS 17.0, *) {
                         Toggle(isOn: $userSettings.isPresenteInd, label: {
                             Text("Presente Indicativo")
@@ -94,7 +94,7 @@ struct optionsView: View {
                         })
                         .padding(/*@START_MENU_TOKEN@*/.horizontal, 15.0/*@END_MENU_TOKEN@*/)
                         .tint(Color("style"))
-                        .foregroundColor(Color("style"))
+                        .foregroundColor(Color("textcolor"))
                         .onChange(of: [self.userSettings.isPresenteInd, self.userSettings.isPerfeitoInd, self.userSettings.isImperfeitoInd, self.userSettings.isPerfeitoCompInd, self.userSettings.isPMQPInd, self.userSettings.isFuturoIInd, self.userSettings.isFuturoIIInd, self.userSettings.isPresenteSub, self.userSettings.isPerfeitoSub, self.userSettings.isImperfeitoSub, self.userSettings.isPMQPSub, self.userSettings.isFuturoISub, self.userSettings.isFuturoIISub, self.userSettings.isCondicionalI, self.userSettings.isCondicionalII]) { oldvalue, newvalue in atLeastOneTempus()}
                     } else {
                         // Fallback on earlier versions
@@ -127,7 +127,7 @@ struct optionsView: View {
                     })
                     .padding(.horizontal, 15.0)
                     .tint(Color("style"))
-                    .foregroundColor(Color("style"))
+                    .foregroundColor(Color("textcolor"))
                     
                     Toggle(isOn: $userSettings.isImperfeitoInd, label: {
                         Text("Pretérito Imperfeito Indicativo")
@@ -135,7 +135,7 @@ struct optionsView: View {
                     })
                     .padding(/*@START_MENU_TOKEN@*/.horizontal, 15.0/*@END_MENU_TOKEN@*/)
                     .tint(Color("style"))
-                    .foregroundColor(Color("style"))
+                    .foregroundColor(Color("textcolor"))
                     
                     Toggle(isOn: $userSettings.isPerfeitoCompInd, label: {
                         Text("Pretérito Perfeito Composto Indicativo")
@@ -143,7 +143,7 @@ struct optionsView: View {
                     })
                     .padding(.horizontal, 15.0)
                     .tint(Color("style"))
-                    .foregroundColor(Color("style"))
+                    .foregroundColor(Color("textcolor"))
                     
                     Toggle(isOn: $userSettings.isPMQPInd, label: {
                         Text("Pretérito Mais-que-Perfeito Indicativo")
@@ -151,7 +151,7 @@ struct optionsView: View {
                     })
                     .padding(.horizontal, 15.0)
                     .tint(Color("style"))
-                    .foregroundColor(Color("style"))
+                    .foregroundColor(Color("textcolor"))
                     
                     Toggle(isOn: $userSettings.isPMQPCompInd, label: {
                         Text("Pretérito Mais-que-perfeito\ncomposto Indicativo")
@@ -159,7 +159,7 @@ struct optionsView: View {
                     })
                     .padding(/*@START_MENU_TOKEN@*/.horizontal, 15.0/*@END_MENU_TOKEN@*/)
                     .tint(Color("style"))
-                    .foregroundColor(Color("style"))
+                    .foregroundColor(Color("textcolor"))
                     
                     Toggle(isOn: $userSettings.isFuturoIInd, label: {
                         Text("Futuro Simples Indicativo")
@@ -167,7 +167,7 @@ struct optionsView: View {
                     })
                     .padding(/*@START_MENU_TOKEN@*/.horizontal, 15.0/*@END_MENU_TOKEN@*/)
                     .tint(Color("style"))
-                    .foregroundColor(Color("style"))
+                    .foregroundColor(Color("textcolor"))
                     
                     Toggle(isOn: $userSettings.isFuturoIIInd, label: {
                         Text("Futuro Composto Indicativo")
@@ -175,7 +175,7 @@ struct optionsView: View {
                     })
                     .padding(/*@START_MENU_TOKEN@*/.horizontal, 15.0/*@END_MENU_TOKEN@*/)
                     .tint(Color("style"))
-                    .foregroundColor(Color("style"))
+                    .foregroundColor(Color("textcolor"))
                 }.frame(maxWidth: .infinity)
                 
                 VStack (spacing: 7.5){
@@ -185,7 +185,7 @@ struct optionsView: View {
                     })
                     .padding(/*@START_MENU_TOKEN@*/.horizontal, 15.0/*@END_MENU_TOKEN@*/)
                     .tint(Color("style"))
-                    .foregroundColor(Color("style"))
+                    .foregroundColor(Color("textcolor"))
                     
                     Toggle(isOn: $userSettings.isPerfeitoSub, label: {
                         Text("Pretérito Perfeito Simples Subjuntivo")
@@ -193,7 +193,7 @@ struct optionsView: View {
                     })
                     .padding(/*@START_MENU_TOKEN@*/.horizontal, 15.0/*@END_MENU_TOKEN@*/)
                     .tint(Color("style"))
-                    .foregroundColor(Color("style"))
+                    .foregroundColor(Color("textcolor"))
                     
                     Toggle(isOn: $userSettings.isImperfeitoSub, label: {
                         Text("Pretérito Imperfeito Subjuntivo")
@@ -201,7 +201,7 @@ struct optionsView: View {
                     })
                     .padding(/*@START_MENU_TOKEN@*/.horizontal, 15.0/*@END_MENU_TOKEN@*/)
                     .tint(Color("style"))
-                    .foregroundColor(Color("style"))
+                    .foregroundColor(Color("textcolor"))
                     
                     Toggle(isOn: $userSettings.isPMQPSub, label: {
                         Text("Pretérito Mais-que-Perfeito Subjuntivo")
@@ -209,7 +209,7 @@ struct optionsView: View {
                     })
                     .padding(/*@START_MENU_TOKEN@*/.horizontal, 15.0/*@END_MENU_TOKEN@*/)
                     .tint(Color("style"))
-                    .foregroundColor(Color("style"))
+                    .foregroundColor(Color("textcolor"))
                     
                     Toggle(isOn: $userSettings.isFuturoISub, label: {
                         Text("Futuro Simples Subjuncitvo")
@@ -217,7 +217,7 @@ struct optionsView: View {
                     })
                     .padding(/*@START_MENU_TOKEN@*/.horizontal, 15.0/*@END_MENU_TOKEN@*/)
                     .tint(Color("style"))
-                    .foregroundColor(Color("style"))
+                    .foregroundColor(Color("textcolor"))
                     
                     Toggle(isOn: $userSettings.isFuturoIISub, label: {
                         Text("Futuro Composto Subjuntivo")
@@ -225,7 +225,7 @@ struct optionsView: View {
                     })
                     .padding(/*@START_MENU_TOKEN@*/.horizontal, 15.0/*@END_MENU_TOKEN@*/)
                     .tint(Color("style"))
-                    .foregroundColor(Color("style"))
+                    .foregroundColor(Color("textcolor"))
                 }.frame(maxWidth: .infinity)
                 
                 VStack (spacing: 7.5) {
@@ -235,7 +235,7 @@ struct optionsView: View {
                     })
                     .padding(/*@START_MENU_TOKEN@*/.horizontal, 15.0/*@END_MENU_TOKEN@*/)
                     .tint(Color("style"))
-                    .foregroundColor(Color("style"))
+                    .foregroundColor(Color("textcolor"))
                     
                     Toggle(isOn: $userSettings.isCondicionalII, label: {
                         Text("Futuro do Préterito Composto\n(Condicional II)")
@@ -243,12 +243,14 @@ struct optionsView: View {
                     })
                     .padding(/*@START_MENU_TOKEN@*/.horizontal, 15.0/*@END_MENU_TOKEN@*/)
                     .tint(Color("style"))
-                    .foregroundColor(Color("style"))
+                    .foregroundColor(Color("textcolor"))
                 }.frame(maxWidth: .infinity)
                 
                 Spacer()
             }
-        }.customNavigationTitle("Opções")
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("background"))
+        .customNavigationTitle("Opções")
             .customNavigationBackButtonHidden(false)
             .customNavigationResetHidden(true)
             .customNavigationOptionsHidden(true)
