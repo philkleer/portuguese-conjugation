@@ -2,11 +2,8 @@
   "colors" : [
     {
       "color" : {
-        "color-space" : "gray-gamma-22",
-        "components" : {
-          "alpha" : "0.510",
-          "white" : "200"
-        }
+        "platform" : "ios",
+        "reference" : "groupTableViewBackgroundColor"
       },
       "idiom" : "universal"
     },
@@ -18,49 +15,15 @@
         }
       ],
       "color" : {
-        "color-space" : "gray-gamma-22",
+        "color-space" : "srgb",
         "components" : {
-          "alpha" : "0.510",
-          "white" : "200"
+          "alpha" : "1.000",
+          "blue" : "0.949",
+          "green" : "0.949",
+          "red" : "0.949"
         }
       },
       "idiom" : "universal"
-    },
-    {
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "dark"
-        }
-      ],
-      "color" : {
-        "color-space" : "gray-gamma-22",
-        "components" : {
-          "alpha" : "0.500",
-          "white" : "0.000"
-        }
-      },
-      "idiom" : "universal"
-    },
-    {
-      "color" : {
-        "platform" : "ios",
-        "reference" : "systemGray6Color"
-      },
-      "idiom" : "iphone"
-    },
-    {
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "light"
-        }
-      ],
-      "color" : {
-        "platform" : "ios",
-        "reference" : "secondaryLabelColor"
-      },
-      "idiom" : "iphone"
     },
     {
       "appearances" : [
@@ -73,17 +36,55 @@
         "platform" : "ios",
         "reference" : "systemGray2Color"
       },
-      "idiom" : "iphone"
+      "idiom" : "universal"
     },
     {
       "color" : {
         "color-space" : "srgb",
         "components" : {
           "alpha" : "1.000",
-          "blue" : "0.902",
-          "green" : "0.902",
-          "red" : "0.902"
+          "blue" : "0.969",
+          "green" : "0.949",
+          "red" : "0.949"
         }
+      },
+      "idiom" : "iphone"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.949",
+          "green" : "0.949",
+          "red" : "0.949"
+        }
+      },
+      "idiom" : "iphone"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "color" : {
+        "platform" : "ios",
+        "reference" : "systemGray2Color"
+      },
+      "idiom" : "iphone"
+    },
+    {
+      "color" : {
+        "platform" : "ios",
+        "reference" : "groupTableViewBackgroundColor"
       },
       "idiom" : "ipad"
     },
@@ -95,8 +96,13 @@
         }
       ],
       "color" : {
-        "platform" : "ios",
-        "reference" : "secondaryLabelColor"
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.949",
+          "green" : "0.949",
+          "red" : "0.949"
+        }
       },
       "idiom" : "ipad"
     },
@@ -128,8 +134,13 @@
         }
       ],
       "color" : {
-        "platform" : "osx",
-        "reference" : "gridColor"
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.949",
+          "green" : "0.949",
+          "red" : "0.949"
+        }
       },
       "idiom" : "mac"
     },
@@ -142,7 +153,7 @@
       ],
       "color" : {
         "platform" : "osx",
-        "reference" : "unemphasizedSelectedTextBackgroundColor"
+        "reference" : "unemphasizedSelectedContentBackgroundColor"
       },
       "idiom" : "mac"
     }
@@ -150,5 +161,8 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "localizable" : true
   }
 }

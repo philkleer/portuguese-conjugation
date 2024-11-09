@@ -25,6 +25,7 @@ struct mainView: View {
     ///  ```swift
     /// @State var userSettings = UserSettings()
     ///  ```
+    
     @State var userSettings = UserSettings()
     
     var body: some View {
@@ -36,20 +37,21 @@ struct mainView: View {
                     Text("Escolha as conjugações ")
                         .font(.title)
                         .fontWeight(.semibold)
-                        .foregroundColor(Color("style"))
+                        .foregroundColor(Color("textcolor"))
                         .customNavigationTitle("Conjugador")
                         .customNavigationBackButtonHidden(true)
                         .customNavigationResetHidden(true)
                         .customNavigationOptionsHidden(true)
                     Image(systemName: "gear")
                         .scaleEffect(2.0)
-                        .foregroundColor(Color("style"))
+                        .foregroundColor(Color("textcolor"))
                 }.padding(.top, 40)
                 
                 Divider()
                     .frame(height: 3)
                     .frame(width: 350)
                     .overlay(.style)
+                    .background(Color("background"))
                 
                 CustomNavLink(
                     destination: trainView()
@@ -60,15 +62,16 @@ struct mainView: View {
                             .fontWeight(.semibold)
                             .padding()
                             .font(.title)
-                            .foregroundColor(Color("style"))
+                            .foregroundColor(Color("textcolor"))
                         Image(systemName: "restart")
                             .scaleEffect(2.0)
                             .rotationEffect(.degrees(180))
-                            .foregroundColor(Color("style"))
+                            .foregroundColor(Color("textcolor"))
                     }
                     .padding(.all, 0.0)
                 }
-            }
+            }.frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color("background"))
         }.environmentObject(userSettings)
     }
 }

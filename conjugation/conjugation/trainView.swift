@@ -268,101 +268,114 @@ struct trainView: View {
     ///
     /// On appear this view is initiate with the function ``newRound()``.
     var body: some View {
-        VStack(spacing: 35) {
-            Text("Correto: " + String(userSettings.correct) + " / Falso: " + String(userSettings.wrong))
-                .foregroundColor(Color("style"))
-                .font(.headline)
-                .padding(.top, 20)
+        VStack(spacing: 0) {
+            VStack() {
+                Text("Correto: " + String(userSettings.correct) + " / Falso: " + String(userSettings.wrong))
+                    .foregroundColor(Color("textcolor"))
+                    .font(.headline)
+                    .padding(.top, 10)
+                    .padding(.bottom, 15)
+            }
             
-            Text("Forme a conjugação de ...")
-                .padding(0.0)
-                .font(.title2)
-                .fontWeight(.bold)
-                .foregroundColor(Color("style"))
-                .frame(width: 350)
+            VStack() {
+                Text("Forme a conjugação de ...")
+                    .padding(0.0)
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("textcolor"))
+                    .frame(width: 350)
+                
+                Text(String(verb))
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(Color("textcolor"))
+                    .padding(.bottom, 20)
+                
+                Text("na " + String(person) + "ª pessoa " + numerus)
+                    .padding(.bottom, 15)
+                    .font(.title2)
+                    .foregroundColor(Color("textcolor"))
+                    .frame(width: 350)
+                    .multilineTextAlignment(.center)
+                
+                Text("de " + String(tense))
+                    .padding(.bottom, 15)
+                    .font(.title2)
+                    .foregroundColor(Color("textcolor"))
+                    .frame(width: 350)
+                    .multilineTextAlignment(.center)
+            }.frame(maxHeight: .infinity)
             
-            Text(String(verb))
-                .font(.title2)
-                .fontWeight(.bold)
+            VStack() {
+                TextField(
+                    "Digite sua dica!",
+                    text: $hint,
+                    onCommit: {
+                        showingAlert = true
+                        target = trainTarget(pessoa: person, numero: numerus, caso: tense, verbo: verbHelper)
+                        result = proof(entrada: hint, alvo: target)
+                        message = createAlertMessage(resultado: result, alvo: target)
+                        if showingAlert == false {newRound()}
+                        isTextFocused = false
+                    }
+                )
+                .padding(.all, 5)
+                .disableAutocorrection(true)
                 .multilineTextAlignment(.center)
-                .foregroundColor(Color("style"))
-            
-            Text("na " + String(person) + "ª pessoa " + numerus)
-                .padding(0.0)
-                .font(.title2)
-                .foregroundColor(Color("style"))
-                .frame(width: 350)
-                .multilineTextAlignment(.center)
-            
-            Text("de " + String(tense))
-                .padding(0.0)
-                .font(.title2)
-                .foregroundColor(Color("style"))
-                .frame(width: 350)
-                .multilineTextAlignment(.center)
-            
-            TextField(
-                "Digite sua dica!",
-                text: $hint,
-                onCommit: {
+                .autocapitalization(.none)
+                .font(.title)
+                .focused($isTextFocused)
+                
+                Button("Teste") {
                     showingAlert = true
                     target = trainTarget(pessoa: person, numero: numerus, caso: tense, verbo: verbHelper)
                     result = proof(entrada: hint, alvo: target)
                     message = createAlertMessage(resultado: result, alvo: target)
-                    if showingAlert == false {newRound()}
+                    if showingAlert == false {
+                        newRound()
+                        hint = ""
+                    }
                     isTextFocused = false
                 }
-            )
-            .padding(.all, 5)
-            .disableAutocorrection(true)
-            .multilineTextAlignment(.center)
-            .autocapitalization(.none)
-            .font(.title)
-            .focused($isTextFocused)
+                .font(.title2)
+                .padding(.bottom, 20)
+                .disabled(hint == "")
+                .alert(isPresented:$showingAlert) {
+                    if (result == false) {
+                        Alert(
+                            title: Text(message),
+                            primaryButton:.default(Text("Que pena! ☹️")) {
+                                newRound()
+                                hint = ""
+                                userSettings.wrong = userSettings.wrong + 1
+                            },
+                            secondaryButton:
+                                    .destructive(Text("Erro de digitação! 🤦🏽‍♂️")) {
+                                        newRound()
+                                        userSettings.correct = userSettings.correct + 1
+                                    }
+                        )
+                    } else {
+                        Alert(
+                            title: Text(message),
+                            dismissButton: .cancel(Text("Joia! 👍🏾")) {
+                                newRound()
+                                userSettings.correct = userSettings.correct + 1
+                            }
+                        )
+                    }
+                }
+                .font(.title)
+                .foregroundColor(Color("textcolor"))
+            }
             
-            Button("Teste") {
-                showingAlert = true
-                target = trainTarget(pessoa: person, numero: numerus, caso: tense, verbo: verbHelper)
-                result = proof(entrada: hint, alvo: target)
-                message = createAlertMessage(resultado: result, alvo: target)
-                if showingAlert == false {
-                    newRound()
-                    hint = ""
-                }
-                isTextFocused = false
-            }
-            .font(.title2)
-            .disabled(hint == "")
-            .alert(isPresented:$showingAlert) {
-                if (result == false) {
-                    Alert(
-                        title: Text(message),
-                        primaryButton:.default(Text("Que pena! ☹️")) {
-                            newRound()
-                            hint = ""
-                            userSettings.wrong = userSettings.wrong + 1
-                        },
-                        secondaryButton:
-                                .destructive(Text("Erro de digitação! 🤦🏽‍♂️")) {
-                                    newRound()
-                                    userSettings.correct = userSettings.correct + 1
-                                }
-                    )
-                } else {
-                    Alert(
-                        title: Text(message),
-                        dismissButton: .cancel(Text("Joia! 👍🏾")) {
-                            newRound()
-                            userSettings.correct = userSettings.correct + 1
-                        }
-                    )
-                }
-            }
-            .font(.title)
-            .foregroundColor(Color("style"))
-        }.onAppear{
-            newRound()
-        }
+//            Spacer()
+//                .frame(minHeight: 0, maxHeight: 50)
+
+        }.onAppear{newRound()}
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color("background"))
         .customNavigationTitle("Treino")
         .customNavigationBackButtonHidden(true)
         .customNavigationResetHidden(false)
