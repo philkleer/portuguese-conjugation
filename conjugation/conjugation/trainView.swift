@@ -2,7 +2,7 @@
 // trainView.swift
 // conjugate-portuguese
 //
-// Created by Philipp Kleer on 29. October 2024
+// Created by Philipp Kleer on 11. November 2024
 // Licensed by CC-BY-NC-SA 4.0
 //
 
@@ -11,18 +11,27 @@ import SwiftUI
 
 struct trainView: View {
     /// value of the targetted person (`Int`)
-    ///
+    ///  
     /// The value is used to indicate the targetted person for the conjugation. It is used in ``trainTarget(pessoa:numero:caso:verbo:)`` and set in ``newRound()`` resp. is the return value of ``setPerson()`` in ``newRound()``.
+    ///  
+    /// ```swift
+    /// @State var person: Int = 1
+    /// ```
+    @State var person: Int = 1
+    
+    /// text of the targetted person (`String`)
+    ///
+    /// This value is a strong shown in the training to make it easier to identify the person of conjugation. It is  set in ``newRound()``.
     ///
     /// ```swift
-    /// @State var person: Int = 1 // Person
+    /// @State var personText: String = "Eu"
     /// ```
-    @State var person: Int = 1 // Person
-
+    @State var personText: String = "Eu"
+    
     /// value of the targetted modus for the conjugation (`String`)
-    ///
+    ///  
     /// This value is used to indicate the targetted modus for the conjugation. It is used in ``trainTarget(pessoa:numero:caso:verbo:)`` and set in ``newRound()`` resp. is the return value of ``setNumerus()`` in ``newRound()``.
-    ///
+    ///   
     /// ```swift
     /// @State var numerus: String = "singular"
     /// ```
@@ -292,7 +301,9 @@ struct trainView: View {
                     .foregroundColor(Color("textcolor"))
                     .padding(.bottom, 20)
                 
-                Text("na " + String(person) + "ª pessoa " + numerus)
+                let message = "na " + String(person) + "ª pessoa " + numerus + " (" + personText + ")"
+                
+                Text(message)
                     .padding(.bottom, 15)
                     .font(.title2)
                     .foregroundColor(Color("textcolor"))
@@ -711,6 +722,23 @@ struct trainView: View {
         verbHelper = setVerb()
         verb = verbHelper[0]
         hint = ""
+        if (numerus == "plural") {
+            if (person == 1) {
+                personText = "Nós"
+            } else if (person == 2) {
+                personText = "Vós"
+            } else {
+                personText = "Eles/Elas/Vocês"
+            }
+        } else {
+            if (person == 1) {
+                personText = "Eu"
+            } else if (person == 2) {
+                personText = "Tu"
+            } else {
+                personText = "Ele/Ela/Você"
+            }
+        }
     }
 }
 
