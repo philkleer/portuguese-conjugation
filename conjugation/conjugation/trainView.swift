@@ -724,19 +724,19 @@ struct trainView: View {
         hint = ""
         if (numerus == "plural") {
             if (person == 1) {
-                personText = "Nós"
+                personText = "nós"
             } else if (person == 2) {
-                personText = "Vós"
+                personText = "vós"
             } else {
-                personText = "Eles/Elas/Vocês"
+                personText = "eles/elas/vocês"
             }
         } else {
             if (person == 1) {
-                personText = "Eu"
+                personText = "eu"
             } else if (person == 2) {
-                personText = "Tu"
+                personText = "tu"
             } else {
-                personText = "Ele/Ela/Você"
+                personText = "ele/ela/você"
             }
         }
     }
