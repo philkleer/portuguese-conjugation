@@ -5,9 +5,6 @@
 ## User settings
 xcuserdata/
 
-## Xcode project file
-conjugation.xcodeproj
-
 ## Obj-C/Swift specific
 *.hmap
 
